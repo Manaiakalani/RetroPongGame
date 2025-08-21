@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Pong Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Courier New', monospace;
+            color: #00ff00;
+        }
+        
+        canvas {
+            border: 2px solid #00ff00;
+            background: #000;
+        }
+        
+        .game-container {
+            text-align: center;
+        }
+        
+        .title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #00ff00;
+        }
+        
+        .instructions {
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .score {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .game-over {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border: 2px solid #00ff00;
+            text-align: center;
+            display: none;
+        }
+        
+        button {
+            background: #000;
+            color: #00ff00;
+            border: 2px solid #00ff00;
+            padding: 10px 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background: #00ff00;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1 class="title">RETRO PONG</h1>
+        <div class="score">
+            <span>Player: <span id="playerScore">0</span></span>
+            <span style="margin-left: 50px;">Computer: <span id="computerScore">0</span></span>
+        </div>
+        <canvas id="gameCanvas" width="800" height="400"></canvas>
+        <div class="instructions">
+            <p>Use W/S keys or Arrow Up/Down to move your paddle</p>
+            <p>First to 5 points wins!</p>
+        </div>
+        
+        <div class="game-over" id="gameOver">
+            <h2 id="gameOverText">Game Over!</h2>
+            <button onclick="restartGame()">Play Again</button>
+        </div>
+    </div>
+
+    <script src="pong.js"></script>
+</body>
+</html>
