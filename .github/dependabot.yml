@@ -1,0 +1,8 @@
+# Weekly version updates for GitHub Actions in .github/workflows.
+# This repo has no package.json or lockfile, so npm is not configured.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
